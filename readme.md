@@ -45,6 +45,8 @@ Basic usages you can see at test controller - classes/controller/payment/test
 			$gateway = 'paypal'; //paypal is only supported for now
 			try
 			{
+				//some hardcode here just for showing how to handle different types of payment. In reallife we will have a single controller action for every type of payment
+			
 				if(Payment_Instance::notifier($gateway, 'recurring')->pay_handled($payment))
 				{
 					Kohana::$log->add(Kohana_Log::DEBUG,'Recuuring payment handled :payment',array(':payment'=>$payment));
